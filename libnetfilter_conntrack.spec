@@ -1,7 +1,8 @@
-Summary:	libnetfilter_conntrack - a userspace library to the in-kernel connection tracking state table
+Summary:	A userspace library to the in-kernel connection tracking state table
+Summary(pl):	Biblioteka przestrzeni u¿ytkownika do tabeli stanów ¶ledzenia po³±czeñ w j±drze
 Name:		libnetfilter_conntrack
 Version:	0.0.27
-Release:	0.1@%{_kernel_ver_str}
+Release:	0.1
 License:	GPL v2
 Group:		Libraries
 Source0:	ftp://ftp.netfilter.org/pub/libnetfilter_conntrack/%{name}-%{version}.tar.bz2
@@ -24,8 +25,21 @@ Main features:
 - listing/retrieving entries from the kernel expect table
 - inserting/modifying/deleting entries from the kernel expect table
 
+%description -l pl
+libnetfilter_conntrack to biblioteka przestrzeni u¿ytkownika
+udostêpniaj±ca interfejs programistyczny (API) do tabeli stanów
+¶ledzenia po³±czeñ w j±drze.
+
+G³ówne mo¿liwo¶ci:
+- lista/pobieranie wpisów z tabeli ¶ledzenia po³±czeñ j±dra
+- wstawianie/modyfikowanie/usuwanie wpisów z tabeli ¶ledzenia po³±czeñ
+  j±dra
+- lista/odtwarzanie wpisów z tabeli oczekiwania j±dra
+- wstawianie/modyfikowanie/usuwanie wpisów z tabeli oczekiwania j±dra
+
 %package devel
 Summary:	Header files for libnetfilter_conntrack library
+Summary(pl):	Pliki nag³ówkowe biblioteki libnetfilter_conntrack
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libnfnetlink-devel
@@ -33,13 +47,20 @@ Requires:	libnfnetlink-devel
 %description devel
 Header files for libnetfilter_conntrack library.
 
+%description devel -l pl
+Pliki nag³ówkowe biblioteki libnetfilter_conntrack.
+
 %package static
 Summary:	Static libnetfilter_conntrack library
+Summary(pl):	Statyczna biblioteka libnetfilter_conntrack
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libnetfilter_conntrack library.
+
+%description static -l pl
+Statyczna biblioteka libnetfilter_conntrack.
 
 %prep
 %setup -q
@@ -56,6 +77,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}/*.{la,a}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -70,15 +93,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/%{name}/nfct_proto_*.la
-%attr(755,root,root) %{_libdir}/%{name}/nfct_proto_*.so
-%attr(755,root,root) %exclude %{_libdir}/%{name}/nfct_proto_*-*.so
-%{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/%{name}/nfct_proto_*.so
+%exclude %{_libdir}/%{name}/nfct_proto_*-*.so
 %dir %{_includedir}/%{name}
 %{_includedir}/%{name}/*.h
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/%{name}/nfct_proto_*.a
 %{_libdir}/lib*.a
