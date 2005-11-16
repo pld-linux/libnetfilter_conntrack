@@ -6,7 +6,7 @@ License:	GPL v2
 Group:		Libraries
 Source0:	ftp://ftp.netfilter.org/pub/libnetfilter_conntrack/%{name}-%{version}.tar.bz2
 # Source0-md5:	c9965daa920d74e6899a41bc27222981
-URL:		http://www.netfilter.org/projects/libnfnetlink/
+URL:		http://www.netfilter.org/projects/libnetfilter_conntrack/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libnfnetlink-devel
