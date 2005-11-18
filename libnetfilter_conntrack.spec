@@ -11,7 +11,6 @@ URL:		http://www.netfilter.org/projects/libnetfilter_conntrack/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libnfnetlink-devel
-Requires:	libnfnetlink
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
