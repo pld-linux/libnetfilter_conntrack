@@ -2,7 +2,7 @@ Summary:	A userspace library to the in-kernel connection tracking state table
 Summary(pl):	Biblioteka przestrzeni u¿ytkownika do tabeli stanów ¶ledzenia po³±czeñ w j±drze
 Name:		libnetfilter_conntrack
 Version:	0.0.30
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Libraries
 Source0:	ftp://ftp.netfilter.org/pub/libnetfilter_conntrack/%{name}-%{version}.tar.bz2
@@ -88,14 +88,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
 %dir %{_libdir}/%{name}
-%attr(755,root,root) %{_libdir}/%{name}/nfct_proto_*-*.so
+%attr(755,root,root) %{_libdir}/%{name}/nfct_*proto_*-*.so
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-%attr(755,root,root) %{_libdir}/%{name}/nfct_proto_*.so
-%exclude %{_libdir}/%{name}/nfct_proto_*-*.so
+%attr(755,root,root) %{_libdir}/%{name}/nfct_*proto_*.so
+%exclude %{_libdir}/%{name}/nfct_*proto_*-*.so
 %dir %{_includedir}/%{name}
 %{_includedir}/%{name}/*.h
 
