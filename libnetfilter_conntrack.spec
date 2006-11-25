@@ -3,7 +3,7 @@ Summary(pl):	Biblioteka przestrzeni u¿ytkownika do tabeli stanów ¶ledzenia po³±c
 Name:		libnetfilter_conntrack
 Version:	0.0.31
 Release:	2
-License:	GPL v2
+License:	GPL v2+
 Group:		Libraries
 Source0:	ftp://ftp.netfilter.org/pub/libnetfilter_conntrack/%{name}-%{version}.tar.bz2
 # Source0-md5:	1871339b180b1b95a55517430bfb7d2b
@@ -12,6 +12,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libnfnetlink-devel >= 0.0.16
 BuildRequires:	libtool
+Requires:	libnfnetlink >= 0.0.16
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,7 +43,7 @@ Summary:	Header files for libnetfilter_conntrack library
 Summary(pl):	Pliki nag³ówkowe biblioteki libnetfilter_conntrack
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libnfnetlink-devel
+Requires:	libnfnetlink-devel >= 0.0.16
 
 %description devel
 Header files for libnetfilter_conntrack library.
@@ -66,8 +67,10 @@ Statyczna biblioteka libnetfilter_conntrack.
 %setup -q
 
 %build
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
@@ -87,20 +90,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libnetfilter_conntrack.so.*.*.*
 %dir %{_libdir}/%{name}
 %attr(755,root,root) %{_libdir}/%{name}/nfct_*proto_*-*.so
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libnetfilter_conntrack.so
+%{_libdir}/libnetfilter_conntrack.la
 %dir %{_includedir}/%{name}
 %{_includedir}/%{name}/*.h
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%attr(755,root,root) %{_libdir}/%{name}/nfct_*proto_*.so
-%exclude %{_libdir}/%{name}/nfct_*proto_*-*.so
 %{_pkgconfigdir}/%{name}.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libnetfilter_conntrack.a
