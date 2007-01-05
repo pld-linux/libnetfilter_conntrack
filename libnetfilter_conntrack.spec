@@ -2,7 +2,7 @@ Summary:	A userspace library to the in-kernel connection tracking state table
 Summary(pl):	Biblioteka przestrzeni u¿ytkownika do tabeli stanów ¶ledzenia po³±czeñ w j±drze
 Name:		libnetfilter_conntrack
 Version:	0.0.31
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Libraries
 Source0:	ftp://ftp.netfilter.org/pub/libnetfilter_conntrack/%{name}-%{version}.tar.bz2
