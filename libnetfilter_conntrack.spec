@@ -1,5 +1,5 @@
 Summary:	A userspace library to the in-kernel connection tracking state table
-Summary(pl):	Biblioteka przestrzeni uøytkownika do tabeli stanÛw ∂ledzenia po≥±czeÒ w j±drze
+Summary(pl.UTF-8):   Biblioteka przestrzeni u≈ºytkownika do tabeli stan√≥w ≈õledzenia po≈ÇƒÖcze≈Ñ w jƒÖdrze
 Name:		libnetfilter_conntrack
 Version:	0.0.50
 Release:	1
@@ -26,21 +26,21 @@ Main features:
 - listing/retrieving entries from the kernel expect table
 - inserting/modifying/deleting entries from the kernel expect table
 
-%description -l pl
-libnetfilter_conntrack to biblioteka przestrzeni uøytkownika
-udostÍpniaj±ca interfejs programistyczny (API) do tabeli stanÛw
-∂ledzenia po≥±czeÒ w j±drze.
+%description -l pl.UTF-8
+libnetfilter_conntrack to biblioteka przestrzeni u≈ºytkownika
+udostƒôpniajƒÖca interfejs programistyczny (API) do tabeli stan√≥w
+≈õledzenia po≈ÇƒÖcze≈Ñ w jƒÖdrze.
 
-G≥Ûwne moøliwo∂ci:
-- lista/pobieranie wpisÛw z tabeli ∂ledzenia po≥±czeÒ j±dra
-- wstawianie/modyfikowanie/usuwanie wpisÛw z tabeli ∂ledzenia po≥±czeÒ
-  j±dra
-- lista/odtwarzanie wpisÛw z tabeli oczekiwania j±dra
-- wstawianie/modyfikowanie/usuwanie wpisÛw z tabeli oczekiwania j±dra
+G≈Ç√≥wne mo≈ºliwo≈õci:
+- lista/pobieranie wpis√≥w z tabeli ≈õledzenia po≈ÇƒÖcze≈Ñ jƒÖdra
+- wstawianie/modyfikowanie/usuwanie wpis√≥w z tabeli ≈õledzenia po≈ÇƒÖcze≈Ñ
+  jƒÖdra
+- lista/odtwarzanie wpis√≥w z tabeli oczekiwania jƒÖdra
+- wstawianie/modyfikowanie/usuwanie wpis√≥w z tabeli oczekiwania jƒÖdra
 
 %package devel
 Summary:	Header files for libnetfilter_conntrack library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki libnetfilter_conntrack
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki libnetfilter_conntrack
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libnfnetlink-devel >= 0.0.16
@@ -48,19 +48,19 @@ Requires:	libnfnetlink-devel >= 0.0.16
 %description devel
 Header files for libnetfilter_conntrack library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe biblioteki libnetfilter_conntrack.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki libnetfilter_conntrack.
 
 %package static
 Summary:	Static libnetfilter_conntrack library
-Summary(pl):	Statyczna biblioteka libnetfilter_conntrack
+Summary(pl.UTF-8):   Statyczna biblioteka libnetfilter_conntrack
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libnetfilter_conntrack library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libnetfilter_conntrack.
 
 %prep
