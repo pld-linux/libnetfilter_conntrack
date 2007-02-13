@@ -1,5 +1,5 @@
 Summary:	A userspace library to the in-kernel connection tracking state table
-Summary(pl.UTF-8):   Biblioteka przestrzeni użytkownika do tabeli stanów śledzenia połączeń w jądrze
+Summary(pl.UTF-8):	Biblioteka przestrzeni użytkownika do tabeli stanów śledzenia połączeń w jądrze
 Name:		libnetfilter_conntrack
 Version:	0.0.50
 Release:	1
@@ -40,7 +40,7 @@ Główne możliwości:
 
 %package devel
 Summary:	Header files for libnetfilter_conntrack library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libnetfilter_conntrack
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libnetfilter_conntrack
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libnfnetlink-devel >= 0.0.16
@@ -53,7 +53,7 @@ Pliki nagłówkowe biblioteki libnetfilter_conntrack.
 
 %package static
 Summary:	Static libnetfilter_conntrack library
-Summary(pl.UTF-8):   Statyczna biblioteka libnetfilter_conntrack
+Summary(pl.UTF-8):	Statyczna biblioteka libnetfilter_conntrack
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
