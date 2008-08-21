@@ -44,7 +44,7 @@ Summary:	Header files for libnetfilter_conntrack library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libnetfilter_conntrack
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libnfnetlink-devel >= 0.0.16
+Requires:	libnfnetlink-devel >= 0.0.39
 
 %description devel
 Header files for libnetfilter_conntrack library.
