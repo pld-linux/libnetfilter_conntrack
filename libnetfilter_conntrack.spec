@@ -1,19 +1,19 @@
 Summary:	A userspace library to the in-kernel connection tracking state table
 Summary(pl.UTF-8):	Biblioteka przestrzeni użytkownika do tabeli stanów śledzenia połączeń w jądrze
 Name:		libnetfilter_conntrack
-Version:	0.0.99
+Version:	0.0.101
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://www.netfilter.org/projects/libnetfilter_conntrack/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	960c3d347d7f4e3fe7437aa198f36e6e
+# Source0-md5:	3c4b4048c914f2694c3ca6de2bb457dc
 URL:		http://www.netfilter.org/projects/libnetfilter_conntrack/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libnfnetlink-devel >= 0.0.39
+BuildRequires:	libnfnetlink-devel >= 1.0.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.9.0
-Requires:	libnfnetlink >= 0.0.39
+Requires:	libnfnetlink >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -44,7 +44,7 @@ Summary:	Header files for libnetfilter_conntrack library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libnetfilter_conntrack
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libnfnetlink-devel >= 0.0.39
+Requires:	libnfnetlink-devel >= 1.0.0
 
 %description devel
 Header files for libnetfilter_conntrack library.
@@ -92,15 +92,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libnetfilter_conntrack.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libnetfilter_conntrack.so.1
+%attr(755,root,root) %ghost %{_libdir}/libnetfilter_conntrack.so.3
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libnetfilter_conntrack.so
 %{_libdir}/libnetfilter_conntrack.la
-%dir %{_includedir}/%{name}
-%{_includedir}/%{name}/*.h
-%{_pkgconfigdir}/%{name}.pc
+%{_includedir}/libnetfilter_conntrack
+%{_pkgconfigdir}/libnetfilter_conntrack.pc
 
 %files static
 %defattr(644,root,root,755)
