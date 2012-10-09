@@ -1,18 +1,20 @@
 Summary:	A userspace library to the in-kernel connection tracking state table
 Summary(pl.UTF-8):	Biblioteka przestrzeni użytkownika do tabeli stanów śledzenia połączeń w jądrze
 Name:		libnetfilter_conntrack
-Version:	1.0.1
+Version:	1.0.2
 Release:	1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://www.netfilter.org/projects/libnetfilter_conntrack/files/%{name}-%{version}.tar.bz2
-# Source0-md5:	2d17d9da1404728d61a29b4a8338ad0c
+# Source0-md5:	447114b5d61bb9a9617ead3217c3d3ff
 URL:		http://www.netfilter.org/projects/libnetfilter_conntrack/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1.6
+BuildRequires:	libmnl-devel >= 1.0.3
 BuildRequires:	libnfnetlink-devel >= 1.0.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.9.0
+Requires:	libmnl >= 1.0.3
 Requires:	libnfnetlink >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -44,6 +46,7 @@ Summary:	Header files for libnetfilter_conntrack library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libnetfilter_conntrack
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libmnl-devel >= 1.0.3
 Requires:	libnfnetlink-devel >= 1.0.0
 
 %description devel
