@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# static library
+
 Summary:	A userspace library to the in-kernel connection tracking state table
 Summary(pl.UTF-8):	Biblioteka przestrzeni użytkownika do tabeli stanów śledzenia połączeń w jądrze
 Name:		libnetfilter_conntrack
@@ -14,6 +18,7 @@ BuildRequires:	libmnl-devel >= 1.0.3
 BuildRequires:	libnfnetlink-devel >= 1.0.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.9.0
+BuildRequires:	rpmbuild(macros) >= 1.527
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	libmnl >= 1.0.3
@@ -79,7 +84,7 @@ Statyczna biblioteka libnetfilter_conntrack.
 %{__automake}
 %configure \
 	--disable-silent-rules \
-	--enable-static
+	%{__enable_disable static_libs static}
 %{__make}
 
 %install
@@ -107,6 +112,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/libnetfilter_conntrack
 %{_pkgconfigdir}/libnetfilter_conntrack.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libnetfilter_conntrack.a
+%endif
